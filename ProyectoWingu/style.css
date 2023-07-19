@@ -1,0 +1,188 @@
+:root{
+    --ruler: 16px;
+    --color-red: #AE1100;
+    --color-bg: #00000088;
+    --color-shadow: #BABECC;
+    --color-white: #FFF;
+    background: linear-gradient(90deg,#015cfe 0%,#0100a6 100%);
+}
+
+body {
+    display: flex;
+    font-family: 'Montserrat', sans-serif;
+    background: url("wingu-home-2.png") no-repeat;
+    color: #fff;
+    justify-content: center;
+    align-items: center;
+  }
+
+form {
+    background: var(--color-bg);
+    padding: 2em;
+    border-radius: 20px;
+    border-left: 1px solid var(--color-shadow);
+    border-top: 1px solid var(--color-shadow);
+    box-shadow: 20px 20px 40px -6px rgba(255, 255, 255, 0.2);
+    text-align: center;
+    position: fixed;
+    top: 6vh;
+    transition: all 0.2s ease-in-out;
+    margin: 0;
+    backdrop-filter: blur(4px);
+}
+.primero{
+    display: inline-block;
+    margin: 10px;
+}
+.segundo{
+    display: inline-block;
+    margin: 10px;
+
+}
+input {
+    background: transparent;
+    padding: 1em;
+    margin-bottom: 1em;
+    border: none;
+    border:2px solid #bdb499;
+    border-radius: 5000px;
+    box-shadow: 4px 4px 60px rgba(255, 255, 255, 0.2);
+    color: #fff;
+    font-family: Montserrat, sans-serif;
+    font-weight: 500;
+    transition: all 0.2s ease-in-out;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+
+label{
+    display: block;
+    width: 100%;
+    font-size: 22px;
+    font-family: "IBM Plex Sans";
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0px;
+}
+
+h1{
+    color: #ffffff;
+    font-weight: 600;
+    font-style: normal;
+    text-transform: none;
+    font-size: 50px;
+    line-height: 50px;
+    letter-spacing: 0px;
+    font-family: "Archivo Expanded Semibold";
+}
+.enviar{
+    display: block;
+    width: 60%;
+    background:#0000004f;
+    backdrop-filter: blur(60px);
+    border-radius:5px;
+    border:0;
+    cursor:pointer;
+    color:rgb(255, 255, 255);
+    font-size:24px;
+    padding-top:10px;
+    padding-bottom:10px;
+    transition: all 0.3s;
+    font-weight:700;
+    margin: 15px auto 0;
+    font-family: "IBM Plex Sans";
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0px;
+    box-shadow: 4px 4px 60px rgba(255, 255, 255, 0.2);
+}
+
+.imagen{
+    position:fixed;
+    top: 10px;
+    right: 10px;
+}
+
+@media screen and (max-width: 800px) {
+    .imagen{
+        display: none;
+    }
+}
+form{
+  position: absolute;
+}
+/* redes */
+.contenedormenu{
+    display: flex;
+    -webkit-tap-highlight-color: transparent;
+}
+.menu {
+    position:fixed;
+    z-index: 5;
+    bottom: 50px;
+    left: 75px;
+    padding: 30px;
+    background: #ffffff;
+    border-radius: 100%;
+    cursor: pointer;
+    &::before, &::after {
+      content: "";
+      background: #000000;
+      border-radius: 5px;
+      width: 30px;
+      height: 5px;
+      position: absolute;
+      left: 16px;
+      top: 27px;
+      transition: 0.2s ease;
+      z-index: 1;
+    }
+    &::before {
+      transform: rotate(0deg);
+    }
+    &::after {
+      transform: rotate(-90deg);
+    }
+    &.open {
+      opacity: .9;
+      &::before {
+        transform: rotate(45deg);
+      }
+      &::after {
+        transform: rotate(-45deg);
+      }
+      .button {
+        opacity: 1;
+        pointer-events: auto;
+        &:first-of-type {
+          bottom: 40px;
+          right: 70px;
+          background: url("instagram.svg") no-repeat 50%/50% #ffffff;
+        }
+        &:nth-of-type(2) {
+          bottom: 80px;
+          background: url("facebook.svg") no-repeat 50%/ 50% #ffffff;
+        }
+        
+        &:nth-of-type(3) {
+            bottom: 40px;
+            right: -70px;
+            background: url("linkedin2.svg") no-repeat 50%/ 50% #ffffff;
+          }
+      }
+    }
+  }
+  .button {
+    padding: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: #ffffff;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    opacity: 0;
+    transition: 0.2s cubic-bezier(0.18, 0.89, 0.32, 1.28), 0.2s ease opacity, 0.2s cubic-bezier(.08,.82,.17,1) transform;
+    &:hover {
+      transform: scale(1.1);
+    }
+    
+  }
